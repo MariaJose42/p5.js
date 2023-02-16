@@ -1,40 +1,38 @@
 //corre solo una vez cuando inicia el programa
-var texto;
+
 function setup(){
     console.log("setup - frameCount:"+frameCount);
-    
-    //createCanvas: ancho, alto en píxeles
-    createCanvas(400,400);
-    background(200)
-
-    //background RGB : Define el color del fondo
-    // RED --> background(255,0,0);
-    // GREEN --> background(0,255, 0);
-    // BLUE --> background(0,255, 0);
-    texto= "Hola Mundo" ;
-
+     createCanvas(200,200);
+     background (125);
 }
 
 //corre continuamente después de la función setup
 function draw(){
+    clear();
+    background(125);
     console.log("draw - frameCount:"+frameCount);
-    background(125)
-    /*line(0,0,50,50)
-    line(50,50,100,0)
-    line(100,0,150,50)
-    line(150,50,200,0) */
+    console.log ("height:" + height);
+    console.log ("width:"+width);
 
-    fill(100,125,225);
-    ellipse(frameCount%400,100,100,40)   ;
-    fill (0,225,225) ;
-    rect(300,300,100,50);
+    console.log("mouseX:"+ mouseX + ",mouseY:"+ mouseY)
 
-    //var text= "Hola Mundo" ;
-    textSize(60);
-    text(texto,30,30,200,200)
+    
+    ellipse(mouseX,mouseY,50)
 
-}
+    if((mouseX<100) && (mouseY<100)){
+        fill("green");
+    }
+    else if((mouseX<200) && (mouseY<100)){
+        fill("red");
+    }
 
-function cambiaTexto(){
-    texto=document.getElementById("texto").value ;
+    else if((mouseX<100) && (mouseY<200)){
+        fill("blue");
+    }
+
+    else if((mouseX<200) && (mouseY<200)){
+        fill("yellow")
+    }
+    
+
 }
