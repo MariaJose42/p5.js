@@ -22,22 +22,28 @@ function draw(){
 
     console.log("keyCode:"+ keyCode)
 
-    
+    fill("blue")
     ellipse(x,y,50)
 
 
     switch (keyCode) {
         //derecha
         case 39:
-            x=x+1;
+            if(x<width){
+                x=x+1;
+            }
             break;
-
+        //izquierda
         case 37:
-            x=x-1
+            if(x>0){
+                x=x-1
+            }
             break;
         //Arriba
         case 38:
-            y=y-1
+            if(y>0){
+                y=y-1
+            }
             /*fill(225,0,0)
             rect(30,30,200,200)
             fill(225,225,0)
@@ -46,11 +52,15 @@ function draw(){
             fill(0,0,225)
             ellipse (30,30,100)*/
             break;
-
+        //abajo
         case 40:
-            y=y+1
+            if(y<height){
+                y=y+1
+            }
             break;
     
     }
+
+    
 
 }
