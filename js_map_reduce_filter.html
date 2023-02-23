@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map Reduce Filter</title>
+</head>
+<body>
+    <script>
+        personas=[
+            {"name":"John","age":36},
+            {"name":"Jane","age":30},
+            {"name":"Bob","age":28}
+        ];
+        //Añadir dos elementos a la lista
+        personas.push({"name":"Pablo","age":29});
+        personas.push({"name":"Alba","age":31});
+        //Crear un listado de nombre usando map
+        nombres= personas.map( obj => obj.name);
+        console.log(nombres);
+        //Crea un listado de mayores o iguales de 30 usando filter
+        mayores30 = personas.filter(num => num.age>=30);
+        console.log(mayores30);
+        //Sumar todas las edades usando reduce
+        let total_edad = personas.reduce((acum,p)=>acum+p.age,0);
+        console.log(total_edad)
+        
+
+    </script>
+</body>
+</html>
